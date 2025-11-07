@@ -1,5 +1,7 @@
+#ponemos el random y ponemos el rango en el que puede hacer el random
 import random
 numero=random.randint(1,10)
+#indicamos el numero de intentos y establecemos el ciclo
 for i in range (3):
     while True:
         try:
@@ -16,7 +18,7 @@ for i in range (3):
                 print("baja mas")
                 break
         except ValueError:
-            print("fallaste")
+            
             break
 else:
     print("el numero correcto era", numero)
