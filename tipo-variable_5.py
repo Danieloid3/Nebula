@@ -7,11 +7,8 @@ print(type(numero))
 decimal=1.200
 print(type(decimal))
 
-decimal_grande=1.000,0000
-print(type(decimal_grande))
-
 un_caracter='a'
 print(type(un_caracter))
 
-datos_usuario=input
+datos_usuario=input("sal")
 print(type(datos_usuario))
