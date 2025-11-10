@@ -18,6 +18,7 @@ usuario = input("Ingrese su usuario: ").lower()
 if usuario not in usuarios:
     print("El usuario no existe en el sistema.")
 else:
+
 # Verificar contraseña
     intentos = 3
     while intentos > 0:
@@ -33,6 +34,7 @@ else:
     if intentos == 0:
         print("Demasiados intentos fallidos. Operación cancelada.")
     else:
+        
         # Menú principal del cajero
         while True:
             print("\nSeleccione una opción: \n1. Consultar saldo\n2. Retirar dinero\n3. Depositar dinero\n4. Salir")

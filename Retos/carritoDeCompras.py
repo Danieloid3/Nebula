@@ -2,6 +2,7 @@ carrito = []
 
 print("Bienvenido al carrito de compras")
 
+# Bucle para agregar productos al carrito
 while True:
     user_input = input("Escriba 'F' para finalizar o 'A' para agregar un producto: ").lower()
 
@@ -27,22 +28,25 @@ while True:
                 continue
         except ValueError:
             print("Entrada inválida. Por favor, ingrese un número válido para la cantidad.")
-            continue        
+            continue       
 
+    # Calcular el costo total del producto
         total_cost = price * amount 
 
+    # Crear un diccionario para el producto y agregarlo al carrito
         product = {
             "Nombre del producto": name,
             "Precio": price,
             "Cantidad": amount,
             "Costo Total": total_cost
     }
+        # Agregar el producto al carrito
         carrito.append(product)
 
     else:
         print("Opción no válida, por favor intente de nuevo.")
 
-
+# Mostrar el contenido del carrito y el costo total
 while True:
     carrito_compras = input("Desea ver el contenido del carrito de compras? (si/no): ").lower()
 
@@ -57,6 +61,7 @@ while True:
         print(f"El costo total del carrito es: {total_carrito}")
         break
 
+# Preguntar si desea comprar el carrito
 while True:
     buy_carrito = input("Desea comprar el carrito? (si/no): ").lower()
 

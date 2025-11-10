@@ -66,6 +66,7 @@ while True:
     a = pedir_numero("Ingrese el primer número: ")
     b = pedir_numero("Ingrese el segundo número: ")
 
+    # Realizar la operación seleccionada
     if opcion == "1":
         print("Resultado:", sumar(a, b))
 

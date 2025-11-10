@@ -1,3 +1,4 @@
+#
 notas = list(map(float, input("Ingrese las calificaciones separadas por coma y al finalizar presiona enter: ").split(","))) 
 print(f"Notas ingresadas: {notas}") 
 

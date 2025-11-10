@@ -14,6 +14,7 @@ def pedir_texto(mensaje):
 
 print("--- AGENDA DE CONTACTOS ---")
 
+# Menú de opciones
 while True:
     print("\nSeleccione una opción: "
     "\n1. Agregar contacto"

@@ -25,7 +25,7 @@ while True:
             "carrera": carrera
         }
 
-        # Se añade a la lista de estudiantes
+        # Se añade a la lista de los estudiantes
         estudiantes.append(estudiante)
 
         print("Estudiante agregado con éxito.")
