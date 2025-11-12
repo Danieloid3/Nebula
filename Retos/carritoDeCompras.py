@@ -73,3 +73,51 @@ while True:
         break
     else:
         print("Entrada inválida. Por favor, ingrese 'si' o 'no'.")
+
+
+-------------------------------------
+
+inventory = []
+
+print("---Gestionador de productos en el inventario---")
+
+while True: 
+
+    print("\nSelecciona la opción que necesite " 
+    "\n1. Agregar producto " 
+    "\n2. Mostrar inventario" 
+    "\n3. Calcular estadísticas"
+    "\n4. Salir")
+
+    option = int(input("Ingrese la opción: "))
+    
+    while True:
+        if option == 1:
+            name = input("Nombre: ")
+        if not name.strip():
+            print("El nombre no puede quedar vacio, Intente nuevamente")
+            continue
+        break
+
+    try:
+        price = float(input("Precio: "))
+        if price <= 0:
+            print("El valor tiene que ser mayo a 0")
+    except ValueError:
+        print("El campo no puede quedar vacio")
+    try:
+        ammount = input("Cantidad: ")
+        if ammount <= 0:
+            print("el valor debe d eser mayor a cero")
+    except ValueError:
+        print("El campo no puede quedar vacio")
+            
+    products = {
+        "nombre" : name,
+        "precio" : price,
+        "cantidad" : ammount
+    }
+
+    inventory.append(products)
+
+    print(products)
