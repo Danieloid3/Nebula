@@ -32,6 +32,7 @@ while True:
                 menu_reportes(informacion_paciente)
             case "6":
                 print("Saliendo del programa...")
+                break
             case _:
                 print("You have entered an invalid option")
 
