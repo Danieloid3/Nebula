@@ -1,16 +1,12 @@
 
+def buscarPaciente (lista, id):
 
-
-def buscarPacienteId (lista, id):
-    encontrado = None
-    for paciente in informacion_paciente:
-        if paciente['id'] == id:
-            encontrado = paciente
-            break
-    if encontrado:
-        print("Paciente encontrado")
-        print(f"Nombre: {encontrado['nombre']}")
-        print(f"Edad: {encontrado['edad']}")
-        print(f"Género: {encontrado['género']}")
-        print(f"Diagnóstico: {encontrado['diagnóstico']}")
-        print(f"Historial Médico: {encontrado["historial"]}")
+    parcial = []
+    for paciente in lista:
+        if id.lower() in paciente['nombre'].lower() or id.lower() in paciente['diagnostico'].lower():
+            parcial.append(paciente)
+            print("Coincidencias parciales encontradas:")
+    for p in parcial:
+        print(f"ID: {p['id']} | Nombre: {p['nombre']} | Edad: {p['edad']} | Género: {p['genero']} | Diagnóstico: {p['diagnostico']} | Historial Médico: {p['historial']}")
+    if not parcial:
+        print("No se encontró ningún paciente con coincidencias con ese ID o nombre.")

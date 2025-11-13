@@ -1,13 +1,14 @@
 from registrarPacientes import *
 from buscarPacientes import *
+from actualizacioDeDatos import *
 
 while True:
 
     try:
         print("\nMenú:")
         print("1. Registrar pacientes")
-        print("2. Add Product")
-        print("3. display Inventory")
+        print("2. Actualizar pacientes")
+        print("3. Buscar pacientes")
         print("4. Exit")
         menu = input("Choose an option: ")
 
@@ -16,11 +17,11 @@ while True:
                 #name = input("Product name: ").strip()
                 registrar_pacientes()
             case "2":
-
-                buscarPacienteId(informacion_paciente)
-                print("Working on it...")
+                menu_principal(informacion_paciente)
             case "3":
-                print("Working on it...")
+                print("Buscar Pacientes")
+                consulta = input("Ingrese el nombre o ID del paciente a buscar: ")
+                buscarPaciente(informacion_paciente, consulta)
             case "4":
                 print("Exiting...")
                 break

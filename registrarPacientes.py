@@ -1,4 +1,12 @@
-informacion_paciente = []  # En esta lista se estará almacenando los datos obtencontador_idos del diccionario pacientes
+informacion_paciente = [{"id": 1, "nombre": "Ana",    "edad": 30,  "genero": "f", "diagnostico": "Gripe",        "historial": ["Gripe"]},
+    {"id": 2, "nombre": "Dani",   "edad": 45,  "genero": "m", "diagnostico": "Asma",         "historial": ["Asma", "Resfriado"]},
+    {"id": 3, "nombre": "Damian",  "edad": 70,  "genero": "f", "diagnostico": "Asma", "historial": ["Hipertension"]},
+    {"id": 4, "nombre": "Carlos", "edad": 5,   "genero": "m", "diagnostico": "Varicela",     "historial": ["Varicela"]},
+    {"id": 5, "nombre": "Sofia",  "edad": 29,  "genero": "f", "diagnostico": "Alergia",      "historial": ["Rinitis", "Alergia"]},
+    {"id": 6, "nombre": "Miguel", "edad": 120, "genero": "m", "diagnostico": "Diabetes",     "historial": ["Diabetes", "Hipertension"]},
+    {"id": 7, "nombre": "Pablo",  "edad": 0,   "genero": "m", "diagnostico": "Prematuro",    "historial": ["Prematuro"]},
+    {"id": 8, "nombre": "Ines",   "edad": 18,  "genero": "f", "diagnostico": "Resfriado",    "historial": ["Resfriado"]},
+]  # En esta lista se estará almacenando los datos obtencontador_idos del diccionario pacientes
 
 
 def registrar_pacientes():
