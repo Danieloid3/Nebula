@@ -16,7 +16,7 @@ def reportes(opcion, informacion_paciente):
                 print(
                     f"ID: {datos['id']} | Nombre: {datos['nombre']} | Edad: {datos['edad']} Genero: {datos['genero']} Diagnóstico: {datos['diagnostico']} Historial: {datos['historial']}")
     elif opcion == 3:
-        diagnóstico_frecuente = [cuenta['diagnostico'] for cuenta in informacion_paciente]
+        diagnóstico_frecuente = [cuenta['diagnostico'].lower() for cuenta in informacion_paciente]
 
         contador = Counter(diagnóstico_frecuente)
         print("---Diagnósticos frecuentes---")
