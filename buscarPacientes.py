@@ -1,7 +1,7 @@
 
 
 
-def buscarPaciente (id):
+def buscarPacienteId (lista, id):
     encontrado = None
     for paciente in informacion_paciente:
         if paciente['id'] == id:
