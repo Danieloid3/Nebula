@@ -25,7 +25,7 @@ def eliminar_user_id(informacion_paciente):
                 return 
             break 
 
-        print("No se encontró ningún usuario con ese ID.")
+    print("No se encontró ningún usuario con ese ID.")
 
 
 
