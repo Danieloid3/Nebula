@@ -18,7 +18,7 @@ while True:
 
         match menu:
             case "1":
-                #name = input("Product name: ").strip()
+
                 registrar_pacientes()
             case "2":
                 menu_principal(informacion_paciente)

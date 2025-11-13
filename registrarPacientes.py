@@ -11,8 +11,8 @@ informacion_paciente = [{"id": 1, "nombre": "Ana",    "edad": 30,  "genero": "f"
 
 def registrar_pacientes():
     contador_id = len(informacion_paciente)#Contador para manejar los id y evitar que hayan repeticiones
-
-    while True:
+    flag = True
+    while flag == True:
         print("\n---Ingrese los datos del paciente---\n")
 
         historial =[] #Lista que va a almacenar los datos obtenidos en el valor diagnostico
@@ -74,14 +74,16 @@ def registrar_pacientes():
 
         informacion_paciente.append(pacientes)
         nuevo_paciente = ""
+
         while not nuevo_paciente == "si" and not nuevo_paciente == "no":
             nuevo_paciente = input("Desea ingresar otro paciente? si/no").lower()
             if nuevo_paciente == "si":
                 continue
             elif nuevo_paciente == "no":
+                flag = False
                 print("Gracias por usar nuestro servicio. ¡Hasta luego!")
 
-        break
+
 
     for datos in informacion_paciente:
         print(
