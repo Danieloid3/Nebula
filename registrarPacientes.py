@@ -10,7 +10,7 @@ informacion_paciente = [{"id": 1, "nombre": "Ana",    "edad": 30,  "genero": "f"
 
 
 def registrar_pacientes():
-    contador_id = len(informacion_paciente)#Contador para manejar los id y evitar que hayan repeticiones
+    contador_id = informacion_paciente[-1]["id"] if informacion_paciente else 0#Contador para manejar los id y evitar que hayan repeticiones
     flag = True
     while flag == True:
         print("\n---Ingrese los datos del paciente---\n")
