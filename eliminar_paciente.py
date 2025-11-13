@@ -13,7 +13,10 @@ def eliminar_user_id(informacion_paciente):
                 if confirmar == "aceptar":
                     informacion_paciente.remove(usuario)
                     print(f"Has aceptado, el usuario {usuario["nombre"]} ha sido eliminado.")
-                    print("Lista actualizada de informacion_paciente:", informacion_paciente)
+                    print("Lista actualizada de informacion_paciente:")
+                    for datos in informacion_paciente:
+                        print(
+                            f"ID: {datos['id']} | Nombre: {datos['nombre']} | Edad: {datos['edad']} Genero: {datos['genero']} Diagnóstico: {datos['diagnostico']} Historial: {datos['historial']}")
                 elif confirmar == "cancelar":
                     print("Has cancelado, el usuario no ha sido eliminado.")
                 else:
@@ -40,7 +43,10 @@ def eliminar_user_name(informacion_paciente):
                 if confirmar1 == "aceptar":
                     informacion_paciente.remove(usuario1)
                     print(f"Has aceptado, el usuario {usuario1["nombre"]} ha sido eliminado.")
-                    print("Lista actualizada de informacion_paciente:", informacion_paciente)
+                    print("Lista actualizada de informacion_paciente:")
+                    for datos in informacion_paciente:
+                        print(
+                            f"ID: {datos['id']} | Nombre: {datos['nombre']} | Edad: {datos['edad']} Genero: {datos['genero']} Diagnóstico: {datos['diagnostico']} Historial: {datos['historial']}")
                 elif confirmar1 == "cancelar":
                     print("Has cancelado, el usuario no ha sido eliminado.")
                 else:
