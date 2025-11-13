@@ -5,7 +5,7 @@ def eliminar_user_id(informacion_paciente):
    
 
     for usuario in informacion_paciente:
-        if (usuario["id"]) == int(id_eliminar):
+        if str(usuario["id"]) == (id_eliminar):
 
             confirmar=""
             while confirmar != "aceptar" and confirmar != "cancelar":
@@ -24,8 +24,8 @@ def eliminar_user_id(informacion_paciente):
                     continue
                 return 
             break 
-        else:
-            print("No se encontró ningún usuario con ese ID.")
+
+        print("No se encontró ningún usuario con ese ID.")
 
 
 
