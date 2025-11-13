@@ -25,16 +25,19 @@ def modificar_nombre(usuario):
             nuevo_nombre = input("Ingresa el nuevo nombre: ")
             if not nuevo_nombre.isalpha():
                 raise ValueError()
-            print(f"Nombre anterior: {usuario['nombre']}")
-            confirmar = input(f"¿Deseas cambiarlo por '{nuevo_nombre}'? (si/no): ").lower()
-            if confirmar == "si":
-                usuario["nombre"] = nuevo_nombre
-                print("Nombre actualizado con exito.")
-            elif confirmar == "no":
-                print("Cambio cancelado.")
-            else:
-                print("Responde solo con 'si' o 'no'.")
-                continue
+            confirmar = ""
+            while confirmar != "si" and confirmar != "no":
+                print(f"Nombre anterior: {usuario['nombre']}")
+                confirmar = input(f"¿Deseas cambiarlo por '{nuevo_nombre}'? (si/no): ").lower()
+                if confirmar == "si":
+                    usuario["nombre"] = nuevo_nombre
+                    print("Nombre actualizado con exito.")
+                elif confirmar == "no":
+                    print("Cambio cancelado.")
+                else:
+                    print("Responde solo con 'si' o 'no'.")
+                    continue
+                break
             break
         except ValueError:
             print("Valor no válido para nombre.")
@@ -45,16 +48,19 @@ def modificar_edad(usuario):
             nueva_edad = input("Ingresa la nueva edad: ")
             if not nueva_edad.isdigit():
                 raise ValueError()
-            print(f"Edad anterior: {usuario['edad']}")
-            confirmar = input(f"¿Deseas cambiarla por '{nueva_edad}'? (si/no): ").lower()
-            if confirmar == "si":
-                usuario["edad"] = int(nueva_edad)
-                print("Edad actualizada con exito.")
-            elif confirmar == "no":
-                print("Cambio cancelado.")
-            else:
-                print("Responde solo con 'si' o 'no'.")
-                continue
+            confirmar = ""
+            while confirmar != "si" and confirmar != "no":
+                print(f"Edad anterior: {usuario['edad']}")
+                confirmar = input(f"¿Deseas cambiarla por '{nueva_edad}'? (si/no): ").lower()
+                if confirmar == "si":
+                    usuario["edad"] = int(nueva_edad)
+                    print("Edad actualizada con exito.")
+                elif confirmar == "no":
+                    print("Cambio cancelado.")
+                else:
+                    print("Responde solo con 'si' o 'no'.")
+                    continue
+                break
             break
         except ValueError:
             print("Valor no válido para edad.")
@@ -65,16 +71,19 @@ def modificar_genero(usuario):
             nuevo_genero = input("Ingresa el nuevo género: ")
             if not nuevo_genero.isalpha():
                 raise ValueError()
-            print(f"Genero anterior: {usuario['genero']}")
-            confirmar = input(f"¿Deseas cambiarlo por '{nuevo_genero}'? (si/no): ").lower()
-            if confirmar == "si":
-                usuario["genero"] = nuevo_genero
-                print("Genero actualizado con éxito.")
-            elif confirmar == "no":
-                print("Cambio cancelado.")
-            else:
-                print("Responde solo con 'si' o 'no'.")
-                continue
+            confirmar = ""
+            while confirmar != "si" and confirmar != "no":
+                print(f"Genero anterior: {usuario['genero']}")
+                confirmar = input(f"¿Deseas cambiarlo por '{nuevo_genero}'? (si/no): ").lower()
+                if confirmar == "si":
+                    usuario["genero"] = nuevo_genero
+                    print("Genero actualizado con éxito.")
+                elif confirmar == "no":
+                    print("Cambio cancelado.")
+                else:
+                    print("Responde solo con 'si' o 'no'.")
+                    continue
+                break
             break
         except ValueError:
             print("Valor no válido para genero.")
