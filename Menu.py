@@ -24,7 +24,7 @@ while True:
                 menu_principal(informacion_paciente)
             case "3":
                 print("Buscar Pacientes")
-                consulta = input("Ingrese el nombre o ID del paciente a buscar: ")
+                consulta = input("Ingrese el nombre, ID  o el diagnóstico del paciente a buscar: ")
                 buscarPaciente(informacion_paciente, consulta)
             case "4":
                 menu_eliminar(informacion_paciente)
