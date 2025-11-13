@@ -10,7 +10,7 @@ informacion_paciente = [{"id": 1, "nombre": "Ana",    "edad": 30,  "genero": "f"
 
 
 def registrar_pacientes():
-    contador_id = 0 #Contador para manejar los id y evitar que hayan repeticiones
+    contador_id = len(informacion_paciente)#Contador para manejar los id y evitar que hayan repeticiones
 
     while True:
         print("\n---Ingrese los datos del paciente---\n")
@@ -73,13 +73,17 @@ def registrar_pacientes():
         }
 
         informacion_paciente.append(pacientes)
+        nuevo_paciente = ""
+        while not nuevo_paciente == "si" and not nuevo_paciente == "no":
+            nuevo_paciente = input("Desea ingresar otro paciente? si/no").lower()
+            if nuevo_paciente == "si":
+                continue
+            elif nuevo_paciente == "no":
+                print("Gracias por usar nuestro servicio. ¡Hasta luego!")
 
-        nuevo_paciente = input("Desea ingresar otro paciente? si/no").lower()
-        if nuevo_paciente == "si":
-            continue
-        elif nuevo_paciente == "no":
-            print("Gracias por usar nuestro servicio. ¡Hasta luego!")
-            break
+        break
 
-    print(f"\nHistoria Clínica del paciente\n {informacion_paciente}") #Para visualizar todo el contenido almacenado en la lista
+    for datos in informacion_paciente:
+        print(
+            f"ID: {datos['id']} | Nombre: {datos['nombre']} | Edad: {datos['edad']} Genero: {datos['genero']} Diagnóstico: {datos['diagnostico']} Historial: {datos['historial']}")
     
