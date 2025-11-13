@@ -82,19 +82,22 @@ def modificar_genero(usuario):
 def modificar_diagnostico(usuario):
     while True:
         try:
-            nuevo_diag = input("Ingresa el nuevo diagnostico: ")
+            nuevo_diag = input("Ingresa el nuevo diagnostico: ").strip()
             if not nuevo_diag.isalpha():
                 raise ValueError()
-            print(f"Diagnostico anterior: {usuario['diagnostico']}")
-            confirmar = input(f"¿Deseas cambiarlo por '{nuevo_diag}'? (si/no): ").lower()
-            if confirmar == "si":
-                usuario["diagnostico"] = nuevo_diag
-                print("Diagnostico actualizado con exito.")
-            elif confirmar == "no":
-                print("Cambio cancelado.")
-            else:
-                print("Responde solo con 'si' o 'no'.")
-                continue
+            confirmar = ""
+            while confirmar != "si" and confirmar != "no":
+                print(f"Diagnostico anterior: {usuario['diagnostico']}")
+                confirmar = input(f"¿Deseas cambiarlo por '{nuevo_diag}'? (si/no): ").lower()
+                if confirmar == "si":
+                    usuario["diagnostico"] = nuevo_diag
+                    print("Diagnostico actualizado con exito.")
+                elif confirmar == "no":
+                    print("Cambio cancelado.")
+                else:
+                    print("Responde solo con 'si' o 'no'.")
+                    continue
+                break
             break
         except ValueError:
             print("Valor no valido para diagnostico.")
