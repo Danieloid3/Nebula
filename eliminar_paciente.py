@@ -1,18 +1,14 @@
-informacion_paciente = [
-    {"id": "1", "nombre": "Salvador"},
-    {"id": "2", "nombre": "Maria"},
-    {"id": "3", "nombre": "Carlos"}
-]
 
-def eliminar_user_id():
+
+def eliminar_user_id(informacion_paciente):
     id_eliminar = input("Ingresa el ID del usuario que quieres eliminar: ").strip()
    
 
     for usuario in informacion_paciente:
-        if usuario["id"] == id_eliminar: 
-            confirmacion = input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario ['nombre']}? ").lower()
+        if (usuario["id"]) == int(id_eliminar):
+
             confirmar=""
-            while confirmar != "Aceptar" and confirmar != "Cancelar":
+            while confirmar != "aceptar" and confirmar != "cancelar":
                 confirmar=input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario ['nombre']}? ").lower()
                 if confirmar == "aceptar":
                     informacion_paciente.remove(usuario)
@@ -25,27 +21,27 @@ def eliminar_user_id():
                     continue
                 return 
             break 
-    
-    print("No se encontró ningún usuario con ese ID.")
+        else:
+            print("No se encontró ningún usuario con ese ID.")
 
 
 
 
-def eliminar_user_name():
+def eliminar_user_name(informacion_paciente):
     nombre_eliminar = input("Ingresa el nombre del usuario que quieres eliminar: ").strip().lower()
     
 
     for usuario1 in informacion_paciente:
         if usuario1["nombre"].strip().lower()==  nombre_eliminar: 
-            confirmacion1 = input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario1 ['nombre']}? ").lower()
+
             confirmar1=""
-            while confirmar1 != "Aceptar" and confirmar1 != "Cancelar":
-                confirmar=input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario1 ['nombre']}? ").lower()
-                if confirmar == "aceptar":
+            while confirmar1 != "aceptar" and confirmar1 != "cancelar":
+                confirmar1=input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario1 ['nombre']}? ").lower()
+                if confirmar1 == "aceptar":
                     informacion_paciente.remove(usuario1)
                     print(f"Has aceptado, el usuario {usuario1["nombre"]} ha sido eliminado.")
                     print("Lista actualizada de informacion_paciente:", informacion_paciente)
-                elif confirmar == "cancelar":
+                elif confirmar1 == "cancelar":
                     print("Has cancelado, el usuario no ha sido eliminado.")
                 else:
                     print("Ingresa el valor correcto.")
@@ -62,7 +58,7 @@ def eliminar_user_name():
 
 
     
-def menu_eliminar():
+def menu_eliminar(informacion_paciente):
     while True:
         print("""Menu Eleccion A Cual Eliminar (Eliminar por ID/Eliminar por nombre)
               1.Eliminar por ID
@@ -75,14 +71,13 @@ def menu_eliminar():
                 continue
 
         if eleccion == 1:
-            eliminar_user_id()
+            eliminar_user_id(informacion_paciente)
 
         elif eleccion == 2:
-            eliminar_user_name()
+            eliminar_user_name(informacion_paciente)
             
 
         else:
             print("Has salido del menu")
             break           
 
-menu_eliminar()

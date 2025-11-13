@@ -1,6 +1,7 @@
 from registrarPacientes import *
 from buscarPacientes import *
 from actualizacioDeDatos import *
+from eliminar_paciente import *
 
 while True:
 
@@ -9,7 +10,8 @@ while True:
         print("1. Registrar pacientes")
         print("2. Actualizar pacientes")
         print("3. Buscar pacientes")
-        print("4. Exit")
+        print("4. Eliminar pacientes")
+        print("5. Salir")
         menu = input("Choose an option: ")
 
         match menu:
@@ -23,8 +25,7 @@ while True:
                 consulta = input("Ingrese el nombre o ID del paciente a buscar: ")
                 buscarPaciente(informacion_paciente, consulta)
             case "4":
-                print("Exiting...")
-                break
+                menu_eliminar(informacion_paciente)
             case _:
                 print("You have entered an invalid option")
 
