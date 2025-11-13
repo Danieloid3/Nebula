@@ -11,14 +11,20 @@ def eliminar_user_id():
     for usuario in informacion_paciente:
         if usuario["id"] == id_eliminar: 
             confirmacion = input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario ['nombre']}? ").lower()
-            
-            if confirmacion == "aceptar":
-                informacion_paciente.remove(usuario)
-                print(f"Has aceptado, el usuario {usuario["nombre"]} ha sido eliminado.")
-                print("Lista actualizada de informacion_paciente:", informacion_paciente)
-            else:
-                print("Has cancelado, el usuario no ha sido eliminado.")
-            return  
+            confirmar=""
+            while confirmar != "Aceptar" and confirmar != "Cancelar":
+                confirmar=input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario ['nombre']}? ").lower()
+                if confirmar == "aceptar":
+                    informacion_paciente.remove(usuario)
+                    print(f"Has aceptado, el usuario {usuario["nombre"]} ha sido eliminado.")
+                    print("Lista actualizada de informacion_paciente:", informacion_paciente)
+                elif confirmar == "cancelar":
+                    print("Has cancelado, el usuario no ha sido eliminado.")
+                else:
+                    print("Ingresa el valor correcto.")
+                    continue
+                return 
+            break 
     
     print("No se encontró ningún usuario con ese ID.")
 
@@ -32,15 +38,21 @@ def eliminar_user_name():
     for usuario1 in informacion_paciente:
         if usuario1["nombre"].strip().lower()==  nombre_eliminar: 
             confirmacion1 = input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario1 ['nombre']}? ").lower()
-            
-            if confirmacion1 == "aceptar":
-                informacion_paciente.remove(usuario1)
-                print(f"Has aceptado, el usuario {usuario1["nombre"]} ha sido eliminado.")
-                print("Lista actualizada de informacion_paciente:", informacion_paciente)
-            else:
-                print("Has cancelado, el usuario no ha sido eliminado.")
-            return  
-    
+            confirmar1=""
+            while confirmar1 != "Aceptar" and confirmar1 != "Cancelar":
+                confirmar=input(f"Deseas eliminar el usuario? Aceptar/Cancelar: {usuario1 ['nombre']}? ").lower()
+                if confirmar == "aceptar":
+                    informacion_paciente.remove(usuario1)
+                    print(f"Has aceptado, el usuario {usuario1["nombre"]} ha sido eliminado.")
+                    print("Lista actualizada de informacion_paciente:", informacion_paciente)
+                elif confirmar == "cancelar":
+                    print("Has cancelado, el usuario no ha sido eliminado.")
+                else:
+                    print("Ingresa el valor correcto.")
+                    continue
+                return 
+            break  
+        
     print("No se encontró ningún usuario con ese nombre.")
 
 
