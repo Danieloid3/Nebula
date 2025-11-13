@@ -5,11 +5,11 @@ informacion_paciente = [
 ]
 
 def eliminar_user():
-    id_eliminar = input("Ingresa el ID del usuario que quieres eliminar: ")
-    nombre_eliminar = input("Ingresa el ID del usuario que quieres eliminar: ")
+    id_eliminar = input("Ingresa el ID del usuario que quieres eliminar: ").strip()
+    #nombre_eliminar = input("Ingresa el ID del usuario que quieres eliminar: ")
 
     for usuario in informacion_paciente:
-        if usuario["id"] == id_eliminar or usuario["nombre"].lower() == nombre_eliminar:
+        if usuario["id"] == id_eliminar: #or usuario["nombre"].lower() == nombre_eliminar:
             confirmacion = input(f"Deseas eliminar el usuario? Copie aceptar o cancelar: {usuario ['nombre']}? ").lower()
             
             if confirmacion == "aceptar":
