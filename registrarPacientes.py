@@ -1,7 +1,7 @@
+informacion_paciente = []  # En esta lista se estará almacenando los datos obtencontador_idos del diccionario pacientes
 
 
 def registrar_pacientes():
-    informacion_paciente = [] #En esta lista se estará almacenando los datos obtencontador_idos del diccionario pacientes
     contador_id = 0 #Contador para manejar los id y evitar que hayan repeticiones
 
     while True:

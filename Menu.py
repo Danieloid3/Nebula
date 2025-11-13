@@ -1,4 +1,5 @@
 from registrarPacientes import *
+from buscarPacientes import *
 
 while True:
 
@@ -15,6 +16,8 @@ while True:
                 #name = input("Product name: ").strip()
                 registrar_pacientes()
             case "2":
+
+                buscarPacienteId(informacion_paciente)
                 print("Working on it...")
             case "3":
                 print("Working on it...")
