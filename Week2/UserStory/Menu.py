@@ -1,8 +1,8 @@
 from Utils import *
-from Inventory import addProduct
 from Utils.Validator import *
 from Utils.Decorator import  *
 from Inventory import *
+inv = Inventory()
 
 while True:
 
@@ -11,36 +11,90 @@ while True:
         print("1. Add Product")
         print("2. Search Product")
         print("3. display Inventory")
-        print("4. Exit")
+        print("4. update Product")
+        print("5. Exit")
         menu = input("Choose an option: ")
 
         match menu:
             case "1":
-                name = ""
-                while not is_valid_name(name):
-                    name = input("Product name: ").strip()
-                    if not is_valid_name(name):
+                flag = True
+                while flag:
+                    print("Add Product")
+                    name = ""
+                    while not is_valid_name(name):
+                        name = input("Product name: ").strip()
+                        if not is_valid_name(name):
+                            print("You have entered an invalid name")
+                    quantity = -1
+                    while not is_positive_int_str(quantity):
+                        quantity = (input("Quantity: "))
+                        if not is_positive_int_str(quantity):
+                            print("You have entered an invalid quantity")
+
+                    price = -1.0
+                    while not is_positive_decimal(price):
+                        price = (input("Price: "))
+                        if not is_positive_decimal(price):
+                            print(color("You have entered an invalid price", "red"))
+
+                    inv.addProduct(name, int(quantity), float(price))
+                    inv.displayInventory()
+                    cont = ""
+                    while parse_bool(cont) != True and parse_bool(cont) != False:
+                        cont = input("Do you want to add another product? (y/n): ").strip().lower()
+                        if parse_bool(cont) != True and parse_bool(cont) != False:
+                            print("You have entered an invalid option")
+                        if parse_bool(cont) == False:
+                            flag = False
+                            print("Returning to main menu...")
+                        else:
+                            flag = True
+
+
+
+            case "2":
+                print("Search Product")
+                name = input("Enter product name or ID to search: ").strip()
+                inv.searchProduct(name)
+            case "3":
+                print("Display Inventory")
+                inv.displayInventory()
+
+            case "4":
+                print("Update Product")
+                name = input("Enter product name to update: ").strip()
+                product = inv.findProductByName(name)
+                if product:
+
+                    while True:
+                        new_name_in = input(f"New product name [{product.name}]: ").strip()
+                        if new_name_in == "" or is_valid_name(new_name_in):
+                            break
                         print("You have entered an invalid name")
-                quantity = -1
-                while not is_positive_int_str(quantity):
-                    quantity = (input("Quantity: "))
-                    if not is_positive_int_str(quantity):
+
+
+                    while True:
+                        quantity_in = input(f"New Quantity [{product.quantity}]: ").strip()
+                        if quantity_in == "" or is_positive_int_str(quantity_in):
+                            break
                         print("You have entered an invalid quantity")
 
-                price = -1.0
-                while not is_positive_decimal(price):
-                    price = (input("Price: "))
-                    if not is_positive_decimal(price):
+
+                    while True:
+                        price_in = input(f"New Price [{product.price}]: ").strip()
+                        if price_in == "" or is_positive_decimal(price_in):
+                            break
                         print(color("You have entered an invalid price", "red"))
 
-                addProduct(name, int(quantity), float(price))
+                    new_name_val = None if new_name_in == "" else new_name_in
+                    quantity_val = None if quantity_in == "" else int(quantity_in)
+                    price_val = None if price_in == "" else float(price_in)
 
-                displayInventory()
-            case "2":
-                print("Work in progress...")
-            case "3":
-                print("Work in progress...")
-            case "4":
+                    inv.updateProduct(name, new_name_val, quantity_val, price_val)
+                else:
+                    print(color("Product not found.", "red"))
+
+            case "5":
                 print("Exiting...")
                 break
             case _:
