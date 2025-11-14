@@ -76,7 +76,7 @@ def registrar_pacientes():
         nuevo_paciente = ""
 
         while not nuevo_paciente == "si" and not nuevo_paciente == "no":
-            nuevo_paciente = input("Desea ingresar otro paciente? si/no").lower()
+            nuevo_paciente = input("Desea ingresar otro paciente? si/no: ").lower()
             if nuevo_paciente == "si":
                 continue
             elif nuevo_paciente == "no":
