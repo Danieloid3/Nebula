@@ -1,38 +1,34 @@
-print("MENU DE REGISTRO:")
-print("1.Nombre.")
-print("2.Precio.")
-print("3.Cantidad.")
-print("4.Salir.")
+print("MENU DE REGISTRO:")  # Menú principal
+print("1.Nombre.")  # Opción nombre
+print("2.Precio.")  # Opción precio
+print("3.Cantidad.")  # Opción cantidad
+print("4.Salir.")  # Salida
 
-nombre=""
-precio=0.0
-cantidad=0
+nombre=""  # Guarda nombre
+precio=0.0  # Guarda precio
+cantidad=0  # Guarda cantidad
 
-
-while True:
-    pregunta=(input("Indica un numero para ingresar a las opciones o salir: "))
-    inventario=[]
+while True:  # Bucle principal
+    pregunta=(input("Indica un numero para ingresar a las opciones o salir: "))  # Solicita opción
+    inventario=[]  # Lista del inventario (reiniciada cada ciclo)
 
     if pregunta =="1":
         print("Has ingresado a la seccion del nombre")
-        nombre=str(input("Ingresa el nombre: "))
+        nombre=str(input("Ingresa el nombre: "))  # Guarda nombre
 
     elif pregunta =="2":
         print("Has ingresado a la seccion del precio")
-        precio=float(input("Ingresa el precio: "))
+        precio=float(input("Ingresa el precio: "))  # Guarda precio
 
     elif pregunta =="3":
         print("Has ingresado a la seccion del cantidad")
-        cantidad=int(input("Ingresa el cantidad: "))   
+        cantidad=int(input("Ingresa el cantidad: "))  # Guarda cantidad  
 
     else:
-        print("Has salido del menu de registro. Suerte.")
+        print("Has salido del menu de registro. Suerte.")  # Fin
         break
 
+    producto={"Nombre": nombre, "Precio": precio, "Cantidad": cantidad}  # Crea producto
+    inventario.append(producto)  # Lo agrega al inventario
 
-    producto={"Nombre": nombre, "Precio": precio, "Cantidad": cantidad} 
-    inventario.append(producto)
-
-    print(producto)
-
-        
+    print(producto)  # Muestra producto
