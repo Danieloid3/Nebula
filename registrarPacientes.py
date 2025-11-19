@@ -87,5 +87,5 @@ def registrar_pacientes():
 
     for datos in informacion_paciente:
         print(
-            f"ID: {datos['id']} | Nombre: {datos['nombre']} | Edad: {datos['edad']} Genero: {datos['genero']} Diagnóstico: {datos['diagnostico']} Historial: {datos['historial']}")
+            f"ID: {datos['id']} | Nombre: {datos['nombre']} | Edad: {datos['edad']} | Genero: {datos['genero']} Diagnóstico: {datos['diagnostico']} Historial: {datos['historial']}")
     
