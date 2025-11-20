@@ -24,3 +24,5 @@ def parimpar(a,b):
 par= parimpar(int(input("Ingrese un numero: ")), int(input("Ingrese otro numero: ")))
 print(par)
 
+print ("Fin del programa")
+
