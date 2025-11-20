@@ -1,4 +1,9 @@
-def crear_archivo(nombre):
-    with open (nombre, "w") as file:
-        file.write("archivo 2 creado")
-        return f"archivo creado {nombre} correctamente"
+def crear_archivo(name_archivo, encabezado):
+    with open (name_archivo, "w") as file:
+        file.write(encabezado)
+        
+def agregar_line_txt(name_archivo, datos):
+    with open(name_archivo, "a") as file:
+        file.write(datos)
+            
+       
