@@ -1,1 +1,1 @@
-archivo 2 creado
+nombre - precio - cantidad3
