@@ -11,6 +11,5 @@ def agregar_line(name_archivo, datos):
         writer.writerow(datos)
 
 def leer_line (name_archivo, leer):
-    with open(name_archivo, "r", newline="") as file:
-        writer=csv.writer(file)
-        writer.writerow(leer)
+    with open(name_archivo, "r") as file:
+        file

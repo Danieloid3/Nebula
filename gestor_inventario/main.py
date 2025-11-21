@@ -1,7 +1,7 @@
 from archivo_csv import crear_csv, agregar_line
 
 
-inventario = leer_line ("inventario.json")
+inventario = []
 
 
 def registrar_producto():
@@ -14,16 +14,18 @@ def registrar_producto():
     print("Producto registrado.")
 
 def mostrar_producto():
-    print
+    buscar=(input("Ingresa el nombre del producto a buscar: "))
+    
+    print (str(f"Aqui tienes tus productos: {inventario}"))
 
 def buscar_producto():
-    print
+    
 
 def editar_producto():
-    nombre_buscar = input("Ingresa el nombre del producto a buscar: ")
+    nombre_buscar = input("Ingresa el nombre del producto a editar: ")
     for p in inventario:
         if p["nombre"] == nombre_buscar:
-            print("Producto encontrado.")
+            print(f"Producto encontrado. {inventario}")
             p["nombre"] = input("Nuevo nombre: ")
             p["precio"] = float(input("Nuevo precio: "))
             p["cantidad"] = int(input("Nueva cantidad: "))
@@ -55,7 +57,7 @@ def cargar_csv():
     print
 
 while True:
-    print("\nMENU")
+    print("MENU")
     print("1. Agregar producto")
     print("2. Mostar producto")
     print("3. Buscar producto")
@@ -84,7 +86,7 @@ while True:
         case "7":
             guardar_csv_menu()
         case "8":
-            cargar_csv
+            cargar_csv()
         case "9":
             break
         case _:
