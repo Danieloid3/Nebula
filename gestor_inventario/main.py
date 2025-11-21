@@ -1,8 +1,7 @@
-from archivo_txt import crear_archivo, agregar_line_txt
 from archivo_csv import crear_csv, agregar_line
-from archivo_json import guardar_json, leer_json
 
-inventario = leer_json("inventario.json")
+
+inventario = leer_line ("inventario.json")
 
 
 def registrar_producto():
@@ -14,6 +13,11 @@ def registrar_producto():
     inventario.append(producto)
     print("Producto registrado.")
 
+def mostrar_producto():
+    print
+
+def buscar_producto():
+    print
 
 def editar_producto():
     nombre_buscar = input("Ingresa el nombre del producto a buscar: ")
@@ -37,13 +41,8 @@ def eliminar_producto():
             return
     print("Producto no encontrado.")
 
-
-def guardar_txt():
-    crear_archivo("inventario.txt")
-    for p in inventario:
-        linea = f"{p['nombre']}, {p['precio']}, {p['cantidad']}\n"
-        agregar_line_txt("inventario.txt", linea)
-    print("TXT guardado.")
+def cargar_estadistica():
+    print
 
 
 def guardar_csv_menu():
@@ -52,21 +51,20 @@ def guardar_csv_menu():
         agregar_line("inventario.csv", [p["nombre"], p["precio"], p["cantidad"]])
     print("CSV guardado.")
 
-
-def guardar_json_menu():
-    guardar_json("inventario.json", inventario)
-    print("JSON guardado.")
-
+def cargar_csv():
+    print
 
 while True:
     print("\nMENU")
-    print("1. Registrar producto")
-    print("2. Editar producto")
-    print("3. Eliminar producto")
-    print("4. Guardar TXT")
-    print("5. Guardar CSV")
-    print("6. Guardar JSON")
-    print("7. Salir")
+    print("1. Agregar producto")
+    print("2. Mostar producto")
+    print("3. Buscar producto")
+    print("4. Actualizar")
+    print("5. Eliminar")
+    print("6. Estadistica")
+    print("7. Guardar CSV")
+    print("8. Cargar CSV")
+    print("9. Salir")
 
     opcion = input("Selecciona una opción: ")
 
@@ -74,16 +72,20 @@ while True:
         case "1":
             registrar_producto()
         case "2":
-            editar_producto()
+            mostrar_producto()
         case "3":
-            eliminar_producto()
+            buscar_producto()
         case "4":
-            guardar_txt()
+            editar_producto()
         case "5":
-            guardar_csv_menu()
+            eliminar_producto()
         case "6":
-            guardar_json_menu()
+            cargar_estadistica()
         case "7":
+            guardar_csv_menu()
+        case "8":
+            cargar_csv
+        case "9":
             break
         case _:
             print("Opción inválida.")
