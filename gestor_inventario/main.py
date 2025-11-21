@@ -5,26 +5,40 @@ inventario = []
 
 
 def registrar_producto():
-    nombre = input("Ingresa el nombre del producto: ")
-    precio = float(input("Ingresa el precio: "))
-    cantidad = int(input("Ingresa la cantidad: "))
 
-    producto = {"nombre": nombre, "precio": precio, "cantidad": cantidad}
-    inventario.append(producto)
-    print("Producto registrado.")
+    while True:
+        try:
+            nombre = str(input("Ingresa el nombre del producto: "))
+            print(nombre.replace("",""))
+            precio = float(input("Ingresa el precio: "))
+            cantidad = int(input("Ingresa la cantidad: "))   
+
+            producto = {"nombre": nombre, "precio": precio, "cantidad": cantidad}
+            inventario.append(producto)
+            print("Producto registrado.")
+            break
+        except ValueError:
+            print("ingresa el valor indicado (precio o cantidad)")
 
 def mostrar_producto():
+
     buscar=(input("Ingresa el nombre del producto a buscar: "))
-    
-    print (str(f"Aqui tienes tus productos: {inventario}"))
+
+    print (str(f"Aqui tienes tus productos: {buscar}"))
 
 def buscar_producto():
-    
+
+    nombre_buscar = (input("Ingresa el nombre del producto a editar: "))
+    for buscar in inventario:
+        if buscar["nombre"] == nombre_buscar:
+            print(f"Producto encontrado. {nombre_buscar}")
+    print("Producto no encontrado.")
 
 def editar_producto():
-    nombre_buscar = input("Ingresa el nombre del producto a editar: ")
+
+    nombre_editar = input("Ingresa el nombre del producto a editar: ")
     for p in inventario:
-        if p["nombre"] == nombre_buscar:
+        if p["nombre"] == nombre_editar:
             print(f"Producto encontrado. {inventario}")
             p["nombre"] = input("Nuevo nombre: ")
             p["precio"] = float(input("Nuevo precio: "))
