@@ -4,6 +4,8 @@ def validar_texto(texto):
     return texto
 
 
+
+
 def validar_numero(numero):
     try:
         valor = float(numero)

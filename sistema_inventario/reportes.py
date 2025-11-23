@@ -1,38 +1,21 @@
 from datos import ventas
 
+
 def top_3_productos():
-    contador = {}
-
+    conteo = {}
     for v in ventas:
-        contador[v["producto"]] = contador.get(v["producto"], 0) + v["cantidad"]
+        conteo[v['producto']] = conteo.get(v['producto'], 0) + v['cantidad']
+    top = sorted(conteo.items(), key=lambda x: x[1], reverse=True)[:3]
+    print(top)
 
-    top = sorted(contador.items(), key=lambda x: x[1], reverse=True)[:3]
-    print("Top 3 Products:")
-    for p in top:
-        print(p)
 
 def ventas_por_marca():
     marcas = {}
-
     for v in ventas:
-        marcas[v["marca"]] = marcas.get(v["marca"], 0) + v["total"]
+        marcas[v['marca']] = marcas.get(v['marca'], 0) + v['neto']
+    print(marcas)
 
-    print("Sales by Brand:")
-    for m, total in marcas.items():
-        print(m, "=>", total)
 
-def menu_reportes():
-    while True:
-        print("\n--- REPORTS MENU ---")
-        print("1. Top 3 best sellers")
-        print("2. Sales by brand")
-        print("0. Back")
-
-        op = input("Option: ")
-
-        if op == "1":
-            top_3_productos()
-        elif op == "2":
-            ventas_por_marca()
-        elif op == "0":
-            break
+def rendimiento_inventario():
+    totales = sum(v['neto'] for v in ventas)
+    print(f"Total revenue: {totales}")
