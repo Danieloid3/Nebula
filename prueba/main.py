@@ -1,4 +1,4 @@
-from fucionamiento import add_product, show_product, update_product, delete_product, search_name
+from prueba.funcionamiento import add_product, show_product, update_product, delete_product, search_name
 from ventas import register_sale, show_sales
 from reportes import inventory_performance, ventas_por_book, top_3_productos
 
