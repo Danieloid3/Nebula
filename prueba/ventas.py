@@ -15,6 +15,8 @@ def register_sale():
             if productos[select_book]['quantity in stock'] < quantity:
                 print(f"We don't have that many books, we only have a few left. {productos[select_book]}")
                 return
+            
+            total= productos[select_book]['price'] * quantity
 
             productos[select_book]['quantity in stock'] -= quantity
 
@@ -25,6 +27,7 @@ def register_sale():
                 "category": productos[select_book]['category'],
                 "price": productos[select_book]['price'],
                 "quantity in stock":quantity,
+                "total": total,
                 "fecha": datetime.now().strftime('%d-%m-%y')
             })
 

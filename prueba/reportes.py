@@ -12,10 +12,10 @@ def top_3_productos():
 def ventas_por_book():
     marcas = {}
     for v in ventas:
-        marcas[v['marca']] = marcas.get(v['marca'], 0) + v['neto']
+        marcas[v['title']] = marcas.get(v['title'], 0) + v['total']
     print(marcas)
 
 
 def inventory_performance():
-    totales = sum(v['neto'] for v in ventas)
+    totales = sum(v['total'] for v in ventas)
     print(f"Total revenue: {totales}")

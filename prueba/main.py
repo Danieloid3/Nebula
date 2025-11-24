@@ -12,9 +12,9 @@ def main():
         print("5-Search book-")
         print("6-Register sales-")
         print("7-Show sales-")
-        print("8-top_3_productos-")
-        print ("9-inventory_performance-")
-        print("10-ventas_por_book-")
+        print("8-Top 3 productos-")
+        print ("9-inventory Performance-")
+        print("10-Ventas por Book-")
         print("11-Exit-")
 
         option=(input("Select the option number: "))
