@@ -40,5 +40,5 @@ def registrar_venta():
 
 
 def mostrar_ventas():
-    for v in ventas:
-        print(v)
+    for venta in ventas:
+        print(venta)
