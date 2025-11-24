@@ -1,18 +1,18 @@
 productos=[
     {
-    "name": "Laptop",
-"brand": "Dell",
-"price": 1200,
-"stock": 10,
-"wrawarranty": 12
+"title": "Harry potter",
+"author": "El creador",
+"category": "ficcion",
+"price": 1000,
+"quantity in stock": 12
 },
 {
-"name": "Samsung S23",
-"brand": "Samsung",
-"price": 9000,
-"stock": 15,
-"wrawarranty": 24
+"title": "Aventuras en la selva",
+"author": "Yo",
+"category": "Accion",
+"price": 1500,
+"quantity in stock": 24
 }
 ]
 
-vntas=[]
+ventas=[]
