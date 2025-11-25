@@ -35,7 +35,7 @@ def register_sale():
             print("Sale registered.")
 
         except ValueError:
-            print("")
+            print("Invalid input. Please enter valid numbers.")
 
 
 def show_sales():

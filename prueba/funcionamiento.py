@@ -3,7 +3,7 @@ from datos import productos
 
 def show_product():
     for i, producto in enumerate(productos):
-        print(f"\n{i+1}. {producto['title']} - {producto['author']} - ${producto['category']} -  price: {producto['price']} -  : {producto['quantity in stock']}\n")
+        print(f"\n{i+1}. {producto['title']} - {producto['author']} - {producto['category']} -  ${producto['price']} -  {producto['quantity in stock']}\n")
         
 
 
@@ -15,7 +15,7 @@ def add_product():
                 "author": (input("Write the author's name: ")),
                 "category": (input("Write a category to which it belongs: ")),
                 "price": int(input("Write the price of the book: ")),
-                "quantity in stock": (input("Write the number of books: "))
+                "quantity in stock": int(input("Write the number of books: "))
             })
 
 
@@ -30,11 +30,11 @@ def update_product():
 
     select_option=int(input(f"{productos}Select product number: "))
     if 0 <= select_option <len(productos):
-        productos[select_option]["precio"] = (input("New title: "))
-        productos[select_option]["precio"] = (input("New author: "))
-        productos[select_option]["precio"] = (input("New category: "))
-        productos[select_option]["precio"] = (input("New price: "))
-        productos[select_option]["price"] = int(input("New quantity in stock: "))
+        productos[select_option]["title"] = (input("New title: "))
+        productos[select_option]["author"] = (input("New author: "))
+        productos[select_option]["category"] = (input("New category: "))
+        productos[select_option]["price"] = (input("New price: "))
+        productos[select_option]["quantity in stock"] = int(input("New quantity in stock: "))
         print("Product updated.")
         print("\n Updated product list:")
 
