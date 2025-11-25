@@ -28,7 +28,8 @@ def add_product():
 
 def update_product():
 
-    select_option=int(input(f"{productos}Select product number: "))
+    show_product()
+    select_option=int(input(f"\nSelect product number: "))
     if 0 <= select_option <len(productos):
         productos[select_option]["title"] = (input("New title: "))
         productos[select_option]["author"] = (input("New author: "))
