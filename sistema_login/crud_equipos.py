@@ -38,3 +38,17 @@ def actualizar_equipos():
 
     else:
         print("opciion invalida")
+
+def eliminar_equipo():
+    while True:   
+            listar_equipos()
+            option_deleted = int(input("Selecciona el equipo a eliminar: ")) - 1
+
+            if 0 <= option_deleted < len(equipos):
+                equipos.pop(option_deleted)
+                print("Equipo eliminado")
+                print("\n Lista de equipos actualizada")
+                listar_equipos()
+                break
+            else:
+                print("\n Selección no válida, por favor ingrese otra vez la eleccion \n")

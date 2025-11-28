@@ -1,5 +1,5 @@
 from login import login_user
-from crud_equipos import crear_equipos, listar_equipos, actualizar_equipos
+from crud_equipos import crear_equipos, listar_equipos, actualizar_equipos, eliminar_equipo
 
 def main():
     while True:
@@ -22,12 +22,13 @@ def main():
                 print("\n-- Ingresaste a la seccion de actualizar equipos --")
                 actualizar_equipos()
             case "4":
-                print
+                print("\n-- Ingresaste a la seccion de eliminar equipos --")
+                eliminar_equipo()
             case "0":
                 print
                 break    
             case _:
                 print
 
-main()
 login_user()
+main()
