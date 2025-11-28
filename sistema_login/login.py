@@ -12,6 +12,7 @@ archivo_user = os.path.join(BASE_DIR, "usuarios.csv")
 def cargar_usuarios():
     usuarios = []
 
+#csv.DictReader te permite leer un CSV y trabajar con datos por su nombre, no por su posición.
     with open(archivo_user, "r", newline="") as archivo:
         lector = csv.DictReader(archivo)
         for fila in lector:

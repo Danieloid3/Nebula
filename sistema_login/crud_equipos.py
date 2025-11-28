@@ -1,3 +1,5 @@
+from validaciones import validar_numero, validar_texto
+
 equipos = []
 
 def listar_equipos():
@@ -13,9 +15,9 @@ def listar_equipos():
 def crear_equipos():
     while True:
         try:
-            nombre = input("Ingresa nombre del equipo: ")
-            entrenador = input("Ingresa el nombre del entrenador: ")
-            trofeos = int(input("Ingresa los trofeos ganados: "))
+            nombre = validar_texto(input("Ingresa nombre del equipo: "))
+            entrenador = validar_texto(input("Ingresa el nombre del entrenador: "))
+            trofeos = validar_numero(int(input("Ingresa los trofeos ganados: ")))
 
             equipos.append({
                 "nombre": nombre,
@@ -25,7 +27,7 @@ def crear_equipos():
             print("\n Equipo creado correctamente \n ")
             break
         except ValueError:
-            print("No se puede saltar las opciones, intentalo de nuevo...\n ")
+            print("No puedes ni saltar opciones, ni escribir valores incorrecto, intentalo de nuevo...\n ")
             
 
 def actualizar_equipos():
