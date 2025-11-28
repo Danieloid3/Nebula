@@ -1,0 +1,40 @@
+equipos = []
+
+def listar_equipos():
+    if not equipos:
+        print("No hay equipos registrados. \n ")
+        return
+
+
+    print("\n--- Lista de Equipos ---")
+    for i, equipo in enumerate(equipos):
+        print(f"{i+1}. {equipo['nombre']} - {equipo['entrenador']} - {equipo['trofeos']}\n")
+
+def crear_equipos():
+    nombre = input("Ingresa nombre del equipo: ")
+    entrenador = input("Ingresa el nombre del entrenador: ")
+    trofeos = int(input("Ingresa los trofeos ganados: "))
+
+    equipos.append({
+        "nombre": nombre,
+        "entrenador": entrenador,
+        "trofeos": trofeos
+    })
+
+    print("\n Equipo creado correctamente \n ")
+
+def actualizar_equipos():
+    if not equipos:
+        print("\n Ese equipo no esta registrado \n")
+        return
+
+    listar_equipos()
+    select_option=int(input(f"\n Selecciona el equipo a actualizar: ")) -1
+    if 0 <= select_option <len(equipos):
+        equipos[select_option]["nombre"] = (input("Nuevo nombre: "))
+        equipos[select_option]["entrenador"] = (input("Nuevo entrenador: "))
+        equipos[select_option]["trofeos"] = int(input("Nueva cantidad de trofeos: "))
+        print("\n Lista actualizada:")
+
+    else:
+        print("opciion invalida")
