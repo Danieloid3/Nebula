@@ -11,21 +11,26 @@ def listar_equipos():
         print(f"{i+1}. {equipo['nombre']} - {equipo['entrenador']} - {equipo['trofeos']}\n")
 
 def crear_equipos():
-    nombre = input("Ingresa nombre del equipo: ")
-    entrenador = input("Ingresa el nombre del entrenador: ")
-    trofeos = int(input("Ingresa los trofeos ganados: "))
+    while True:
+        try:
+            nombre = input("Ingresa nombre del equipo: ")
+            entrenador = input("Ingresa el nombre del entrenador: ")
+            trofeos = int(input("Ingresa los trofeos ganados: "))
 
-    equipos.append({
-        "nombre": nombre,
-        "entrenador": entrenador,
-        "trofeos": trofeos
-    })
-
-    print("\n Equipo creado correctamente \n ")
+            equipos.append({
+                "nombre": nombre,
+                "entrenador": entrenador,
+                "trofeos": trofeos
+            })
+            print("\n Equipo creado correctamente \n ")
+            break
+        except ValueError:
+            print("No se puede saltar las opciones, intentalo de nuevo...\n ")
+            
 
 def actualizar_equipos():
     if not equipos:
-        print("\n Ese equipo no esta registrado \n")
+        print("No hay equipos registrados. \n")
         return
 
     listar_equipos()
@@ -37,9 +42,13 @@ def actualizar_equipos():
         print("\n Lista actualizada:")
 
     else:
-        print("opciion invalida")
+        print("opcion invalida")
 
 def eliminar_equipo():
+    if not equipos:
+        print("No hay equipos registrados. \n")
+        return
+
     while True:   
             listar_equipos()
             option_deleted = int(input("Selecciona el equipo a eliminar: ")) - 1
